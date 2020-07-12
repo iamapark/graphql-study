@@ -17,6 +17,8 @@ type Author {
 type Query {
     allPosts(count: Int, offset: Int): [Post]!
     allAuthors: [Author]
+    Author(id: ID): Author!
+    Post(id: ID): Post!
 }
 
 # The Root Mutation for the application

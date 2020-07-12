@@ -32,4 +32,12 @@ public class RootQueryResolver implements GraphQLQueryResolver {
     public List<Author> allAuthors() {
         return authorRepository.findAll();
     }
+
+    public Author Author(Long id) {
+        return authorRepository.findById(id).orElseThrow();
+    }
+
+    public PostResponse Post(Long id) {
+        return postDao.findById(id).map(PostResponse::from).orElseThrow();
+    }
 }
